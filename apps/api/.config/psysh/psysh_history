@@ -1,0 +1,2 @@
+Schema::getColumnListing('products')
+exit
