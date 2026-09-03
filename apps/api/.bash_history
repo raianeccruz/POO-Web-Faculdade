@@ -31,3 +31,9 @@ php artisan make:model Product -fsm
 php artisan make:model Product -m
 exit
 exit
+php artisan db:seed --class=OrderSeeder
+php artisan migrate
+php artisan make:request OrderStoreRequest
+php artisan make:request OrderUpdateRequest
+php artisan make:controller OrderController --api --pest
+exit

@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+
 
 //Route::get('categories', [CategoryController::class, 'index']);
 //Route::post('categories', [CategoryController::class, 'store']);
@@ -31,3 +35,6 @@ Route::group([
 }); */
 
 Route::apiResource('categories', CategoryController::class);
+Route::apiResource('products', ProductController::class);
+Route::apiResource('customers', CustomerController::class);
+Route::apiResource('orders', OrderController::class);

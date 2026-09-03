@@ -1,0 +1,37 @@
+
+@baseUri = http://localhost:8182/api
+
+### Index
+GET {{baseUri}}/products HTTP/1.1
+content-type: application/json  
+
+### Store
+POST {{baseUri}}/products HTTP/1.1
+content-type: application/json
+
+{
+    "description": "Produto criado via API/REST"
+}
+
+### Show
+# 126 é o id do produto nesse exemplo
+# Utilize o id existente em sua base de dados
+GET {{baseUri}}/products/10 HTTP/1.1
+content-type: application/json
+
+### Update
+# 126 é o id do produto nesse exemplo
+# Utilize o id existente em sua base de dados
+PUT {{baseUri}}/products/12 HTTP/1.1
+content-type: application/json
+
+{
+    "description": "Produto ATUALIZADO via API/REST"  
+}
+
+### Delete
+# 130 é o id do produto nesse exemplo
+# Utilize o id existente em sua base de dados
+# Após a execução deste processo, o mesmo id não funcionara
+DELETE {{baseUri}}/products/3 HTTP/1.1
+content-type: application/json
