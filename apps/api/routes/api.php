@@ -38,3 +38,4 @@ Route::apiResource('categories', CategoryController::class);
 Route::apiResource('products', ProductController::class);
 Route::apiResource('customers', CustomerController::class);
 Route::apiResource('orders', OrderController::class);
+Route::apiResource('reviews', ReviewController::class);

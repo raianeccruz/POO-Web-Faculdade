@@ -37,3 +37,12 @@ php artisan make:request OrderStoreRequest
 php artisan make:request OrderUpdateRequest
 php artisan make:controller OrderController --api --pest
 exit
+php artisan db:seed --class=ReviewSeeder
+php artisan migrate
+php artisan db:seed --class=ReviewSeeder
+php artisan migrate:status
+php artisan migrate
+php artisan db:seed --class=ReviewSeeder
+php artisan make:request ReviewStoreRequest
+php artisan make:controller ReviewController --api --pest
+exit
