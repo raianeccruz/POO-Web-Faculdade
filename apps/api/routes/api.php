@@ -1,11 +1,12 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ReviewController;
+
 
 
 //Route::get('categories', [CategoryController::class, 'index']);
@@ -34,8 +35,18 @@ Route::group([
     });
 }); */
 
-Route::apiResource('categories', CategoryController::class);
-Route::apiResource('products', ProductController::class);
-Route::apiResource('customers', CustomerController::class);
-Route::apiResource('orders', OrderController::class);
-Route::apiResource('reviews', ReviewController::class);
+//registrar rota de login
+Route::post('auth/login', [AuthController::class, 'login']);
+
+//mover rotas de aplicação (CRUD) para o grupo protegido
+Route::group([
+    'middleware' => [
+        'auth:sanctum',
+    ]
+], function() {
+    Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('products', ProductController::class);
+    Route::apiResource('customers', CustomerController::class);
+    Route::apiResource('orders', OrderController::class);
+    Route::apiResource('reviews', ReviewController::class);
+});

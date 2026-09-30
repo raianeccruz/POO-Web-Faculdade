@@ -3,13 +3,19 @@
 
 ### Index
 GET {{baseUri}}/orders HTTP/1.1
-content-type: application/json  
+content-type: application/json 
+Authorization: Bearer {{accessToken}}
 
 ### Store
 POST {{baseUri}}/orders HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 {
+    "customer_id": 1,
+    "product_id": 1,
+    "quantity": 2,
+    "total": 200,
     "description": "Pedido criado via API/REST"
 }
 
@@ -18,14 +24,20 @@ content-type: application/json
 # Utilize o id existente em sua base de dados
 GET {{baseUri}}/orders/10 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 ### Update
 # 126 é o id do pedido nesse exemplo
 # Utilize o id existente em sua base de dados
-PUT {{baseUri}}/orders/12 HTTP/1.1
+PUT {{baseUri}}/orders/1 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 {
+    "customer_id": 1,
+    "product_id": 1,
+    "quantity": 2,
+    "total": 500,
     "description": "Pedido ATUALIZADO via API/REST"  
 }
 
@@ -35,3 +47,4 @@ content-type: application/json
 # Após a execução deste processo, o mesmo id não funcionara
 DELETE {{baseUri}}/orders/3 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}

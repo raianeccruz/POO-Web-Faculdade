@@ -1,2 +1,8 @@
 Schema::getColumnListing('products')
 exit
+>>> DB::table('migrations')->where('migration', 'like', '%reviews%')->delete()
+>>> exit
+DB::table('migrations')->where('migration', 'like', '%reviews%')->get();
+DB::table('migrations')->where('migration', 'like', '%reviews%')->delete();
+DB::table('migrations')->where('migration', 'like', '%reviews%')->delete();
+exit

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Http\Requests\OrderStoreRequest;
+use App\Http\Requests\OrderUpdateRequest;
 
 class OrderController extends Controller
 {

@@ -3,13 +3,18 @@
 
 ### Index
 GET {{baseUri}}/customers HTTP/1.1
-content-type: application/json  
+content-type: application/json 
+Authorization: Bearer {{accessToken}}
 
 ### Store
 POST {{baseUri}}/customers HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 {
+    "name": "Pessoa 1",
+    "email": "exemplo@exemplo.com",
+    "phone": "42999999999",
     "description": "Cliente criado via API/REST"
 }
 
@@ -18,14 +23,19 @@ content-type: application/json
 # Utilize o id existente em sua base de dados
 GET {{baseUri}}/customers/10 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 ### Update
 # 126 é o id do cliente nesse exemplo
 # Utilize o id existente em sua base de dados
 PUT {{baseUri}}/customers/12 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 {
+    "name": "Pessoa 12",
+    "email": "exemplo1@exemplo.com",
+    "phone": "42999999999",
     "description": "Cliente ATUALIZADO via API/REST"  
 }
 
@@ -35,3 +45,4 @@ content-type: application/json
 # Após a execução deste processo, o mesmo id não funcionara
 DELETE {{baseUri}}/customers/3 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}

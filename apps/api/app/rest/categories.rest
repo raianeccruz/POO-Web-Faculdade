@@ -4,28 +4,34 @@
 ### Index
 GET {{baseUri}}/categories HTTP/1.1
 content-type: application/json  
+Authorization: Bearer {{accessToken}}
 
 ### Store
 POST {{baseUri}}/categories HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 {
+    "name": "Eletronicos",
     "description": "Categoria criada via API/REST"
 }
 
 ### Show
 # 126 é o id da categoria nesse exemplo
 # Utilize o id existente em sua base de dados
-GET {{baseUri}}/categories/10 HTTP/1.1
+GET {{baseUri}}/categories/1 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 ### Update
 # 126 é o id da categoria nesse exemplo
 # Utilize o id existente em sua base de dados
-PUT {{baseUri}}/categories/12 HTTP/1.1
+PUT {{baseUri}}/categories/1 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 {
+    "name": "Computadores",
     "description": "Categoria ATUALIZADA via API/REST"  
 }
 
@@ -35,3 +41,4 @@ content-type: application/json
 # Após a execução deste processo, o mesmo id não funcionara
 DELETE {{baseUri}}/categories/3 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}

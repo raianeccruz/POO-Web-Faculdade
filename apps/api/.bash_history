@@ -46,3 +46,8 @@ php artisan db:seed --class=ReviewSeeder
 php artisan make:request ReviewStoreRequest
 php artisan make:controller ReviewController --api --pest
 exit
+php artisan db:seed OrderSeeder
+php artisan db:seed OrderSeeder
+php artisan make:request ReviewUpdateRequest
+grep -rn "RequestUpdateRequest" app routes
+exit

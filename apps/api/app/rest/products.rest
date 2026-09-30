@@ -3,13 +3,19 @@
 
 ### Index
 GET {{baseUri}}/products HTTP/1.1
-content-type: application/json  
+content-type: application/json 
+Authorization: Bearer {{accessToken}}
 
 ### Store
 POST {{baseUri}}/products HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 {
+    "name": "Computadores",
+    "description": "Gamer",
+    "price": 7000,
+    "category_id": 51,
     "description": "Produto criado via API/REST"
 }
 
@@ -18,12 +24,14 @@ content-type: application/json
 # Utilize o id existente em sua base de dados
 GET {{baseUri}}/products/10 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 ### Update
 # 126 é o id do produto nesse exemplo
 # Utilize o id existente em sua base de dados
 PUT {{baseUri}}/products/12 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
 
 {
     "description": "Produto ATUALIZADO via API/REST"  
@@ -35,3 +43,4 @@ content-type: application/json
 # Após a execução deste processo, o mesmo id não funcionara
 DELETE {{baseUri}}/products/3 HTTP/1.1
 content-type: application/json
+Authorization: Bearer {{accessToken}}
