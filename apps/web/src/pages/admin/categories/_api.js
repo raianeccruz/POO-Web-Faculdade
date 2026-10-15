@@ -8,6 +8,10 @@ export const createCategory = (params = {}) => {
   return api.post('/categories', params).then(({ data }) => data)
 }
 
+export const getCategory = (id) => {
+  return api.get(`/categories/${id}`).then(({ data }) => data)
+}
+
 export const updateCategory = (id, params = {}) => {
   return api.put(`/categories/${id}`, params).then(({ data }) => data)
 }

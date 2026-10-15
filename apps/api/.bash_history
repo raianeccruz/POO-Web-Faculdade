@@ -51,3 +51,6 @@ php artisan db:seed OrderSeeder
 php artisan make:request ReviewUpdateRequest
 grep -rn "RequestUpdateRequest" app routes
 exit
+php artisan make:list | grep products
+php artisan make:list | grep products
+exit
