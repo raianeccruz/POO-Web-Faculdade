@@ -23,6 +23,8 @@ class ProductController extends Controller
     public function store(ProductStoreRequest $request)
     {
         $data = $request->validated();
+        $data['position'] ??= 0;
+        $data['enabled'] ??= true;
 
         $product = Product::create($data);
 
