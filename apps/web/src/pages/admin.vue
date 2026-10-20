@@ -38,6 +38,12 @@ const linksList = [
     icon: 'category',
     link: '/admin/products',
   },
+  {
+    label: 'Clientes',
+    caption: 'clientes',
+    icon: 'customer',
+    link: '/admin/customers',
+  },
 ]
 
 const leftDrawerOpen = ref(false)

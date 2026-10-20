@@ -26,6 +26,7 @@ class CustomerStoreRequest extends FormRequest
             'name' => 'required|string',
             'email' => 'required|email',
             'phone' => 'required|string',
+            'birth_date' => 'required|date',
         ];
     }
 }
