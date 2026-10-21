@@ -54,3 +54,7 @@ exit
 php artisan make:list | grep products
 php artisan make:list | grep products
 exit
+php artisan make:request UploadRequest
+php artisan make:controller UploadController
+php artisan route:list
+exit

@@ -6,7 +6,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ReviewController;
-
+use App\Http\Controllers\UploadController;
 
 
 //Route::get('categories', [CategoryController::class, 'index']);
@@ -49,4 +49,5 @@ Route::group([
     Route::apiResource('customers', CustomerController::class);
     Route::apiResource('orders', OrderController::class);
     Route::apiResource('reviews', ReviewController::class);
+    Route::post('upload', [UploadController::class, 'upload']);
 });
